@@ -6,20 +6,20 @@ Identifiers can be created using different bases (58, 58, 62, 64) with base62 th
 
 The Lambda expects to receive an event of the form:
 
-`
+```json
 {
 	"Base" : "62",
 	"Length" : "10"
 }
-`
+```
 
-If either value is missing from the event, then the value passed as a parameter in the script will be used.
+If either `Base` or `Length` is missing from the event, then the value passed as a parameter in the script will be used.
+
+The Lambda executes in its own private VPC, with a VPC Endpoint providing access to the DynamoDB table.
 
 The script creates the following:
 
 ![alt text](https://github.com/gford1000-aws/unique-id-generator/blob/master/Unique%20Id%20Generator.png "Script per designer")
-
-The Lambda executes in its own private VPC, with a VPC Endpoint providing access to the DynamoDB table.
 
 Notes:
 
